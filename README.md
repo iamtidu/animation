@@ -43,6 +43,6 @@ animation.from(box, { l: -50, o: 0, s: 0.5, d: 500, dl: 500, ease: 'ease-in', ad
 
 //Apply the 'to' animation after 2 seconds
 setTimeout(() => {
-    animation.from(box, { b: -10, o: 0, d: 500, dl: 500, ease: 'ease-in', ad: 'reverse' });
+    animation.to(box, { b: -10, o: 0, d: 500, dl: 500, ease: 'ease-in', ad: 'reverse' });
 }, 2000);
 ```
