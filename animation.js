@@ -1,4 +1,3 @@
-
 // animation.js
 
 const animation = {
@@ -15,6 +14,7 @@ const animation = {
         s: 'scale',
         ease: 'animationTimingFunction',
         ad: 'animationDirection',
+        p: 'position',
     },
 
     from(element, properties) {
@@ -32,12 +32,16 @@ const animation = {
         const delay = properties.dl || 0;
         const ease = properties.ease || 'linear';
         const direction = properties.ad || 'normal';
+        const position = properties.p || 'relative'; // Default position is 'relative'
         const startTime = performance.now() + delay;
+
+        // Set default position
+        element.style.position = position;
 
         // Translate aliases to real CSS properties
         for (let alias in properties) {
             const prop = this.aliases[alias] || alias;
-            if (alias !== 'd' && alias !== 'dl' && alias !== 'ease' && alias !== 'ad') {
+            if (alias !== 'd' && alias !== 'dl' && alias !== 'ease' && alias !== 'ad' && alias !== 'p') {
                 if (type === 'to') {
                     start[prop] = parseFloat(getComputedStyle(element)[prop]);
                     end[prop] = properties[alias];
