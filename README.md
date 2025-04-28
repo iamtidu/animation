@@ -46,3 +46,4 @@ setTimeout(() => {
     animation.to(box, { b: -10, o: 0, d: 500, dl: 500, ease: 'ease-in', ad: 'reverse' });
 }, 2000);
 ```
+Updated soon!!
